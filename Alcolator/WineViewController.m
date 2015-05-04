@@ -16,6 +16,9 @@
 
 @implementation WineViewController
 
+float numberOfWineGlassesForEquivalentAcloholAmount = 0;
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Set Title:
@@ -38,6 +41,8 @@
 //    NSLog(@"%i", numberOfBeers);
     self.numberofBeersLabel.text = [NSString stringWithFormat: @"Number of beers: %i", numberOfBeers];
     [self.beerPercentTextField resignFirstResponder];
+    [self buttonPressed:(self)];
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", (int) numberOfWineGlassesForEquivalentAcloholAmount]];
 }
 
 - (IBAction)buttonPressed:(id)sender {
@@ -52,7 +57,7 @@
     float ouncesInOneWineGlass = 5;
     float alcoholPercentageOfWine = 0.13;
     float ouncesOfAlocoholPerWineGlass = ouncesInOneWineGlass * alcoholPercentageOfWine;
-    float numberOfWineGlassesForEquivalentAcloholAmount = ouncesOfAlcoholTotal / ouncesOfAlocoholPerWineGlass;
+    numberOfWineGlassesForEquivalentAcloholAmount = ouncesOfAlcoholTotal / ouncesOfAlocoholPerWineGlass;
     //decide whether to use beer/beers and glass/glasses
     NSString * beerText;
     if (numberOfBeers ==1){
@@ -75,6 +80,8 @@
     self.resultLabel.text = resultText;
     self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"Wine (%.lf %@)", nil), numberOfWineGlassesForEquivalentAcloholAmount, wineText];
 }
+
+
 
 
 @end

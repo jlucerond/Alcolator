@@ -10,9 +10,13 @@
 
 @interface WhiskeyViewController ()
 
+@property (strong, nonatomic) IBOutlet UILabel *numberOfBeersLabel;
+
 @end
 
 @implementation WhiskeyViewController
+
+float numberOfWhiskeyGlassesForEquivalentAcloholAmount = 0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,7 +36,7 @@
     float ouncesInOneWhiskeyGlass = 1;
     float alcoholPercentageOfWhiskey = 0.4;
     float ouncesOfAlocoholPerWihiskeyGlass = ouncesInOneWhiskeyGlass * alcoholPercentageOfWhiskey;
-    float numberOfWhiskeyGlassesForEquivalentAcloholAmount = ouncesOfAlcoholTotal / ouncesOfAlocoholPerWihiskeyGlass;
+    numberOfWhiskeyGlassesForEquivalentAcloholAmount = ouncesOfAlcoholTotal / ouncesOfAlocoholPerWihiskeyGlass;
     //decide whether to use beer/beers and glass/glasses
     NSString * beerText;
     if (numberOfBeers ==1){
@@ -56,5 +60,15 @@
     self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"Whiskey (%.lf %@)", nil), numberOfWhiskeyGlassesForEquivalentAcloholAmount, whiskeyText];
 }
 
+- (IBAction)sliderValueDidChange:(UISlider *)sender {
+    NSLog(@"Slider value changed to %f", sender.value);
+    int numberOfBeers = sender.value;
+    //    This works fine, why won't the textLabel accept numberOfBeers in this statement?
+    //    NSLog(@"%i", numberOfBeers);
+    self.numberOfBeersLabel.text = [NSString stringWithFormat: @"Number of beers: %i", numberOfBeers];
+    [self.beerPercentTextField resignFirstResponder];
+    [self buttonPressed:(self)];
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", (int) numberOfWhiskeyGlassesForEquivalentAcloholAmount]];
+}
 
 @end
