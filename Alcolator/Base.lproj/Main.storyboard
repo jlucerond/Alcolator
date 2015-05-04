@@ -178,7 +178,6 @@
                     <connections>
                         <outlet property="beerCountSlider" destination="JVe-sD-7Ml" id="Bzc-hz-Vah"/>
                         <outlet property="beerPercentTextField" destination="yIg-q5-NQ2" id="rHN-xl-ksM"/>
-                        <outlet property="numberOfBeersLabel" destination="MiE-d2-jrA" id="TXn-hs-KFk"/>
                         <outlet property="numberofBeersLabel" destination="MiE-d2-jrA" id="WdR-WI-x9P"/>
                         <outlet property="resultLabel" destination="4s9-3s-sh6" id="zBj-85-LLC"/>
                     </connections>

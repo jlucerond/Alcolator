@@ -10,8 +10,6 @@
 
 @interface WhiskeyViewController ()
 
-@property (strong, nonatomic) IBOutlet UILabel *numberOfBeersLabel;
-
 @end
 
 @implementation WhiskeyViewController
@@ -61,14 +59,5 @@ float numberOfWhiskeyGlassesForEquivalentAcloholAmount = 0;
     [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%.lf", (float) numberOfWhiskeyGlassesForEquivalentAcloholAmount]];
 }
 
-- (IBAction)sliderValueDidChange:(UISlider *)sender {
-    NSLog(@"Slider value changed to %f", sender.value);
-    int numberOfBeers = sender.value;
-    //    This works fine, why won't the textLabel accept numberOfBeers in this statement?
-    //    NSLog(@"%i", numberOfBeers);
-    self.numberOfBeersLabel.text = [NSString stringWithFormat: @"Number of beers: %i", numberOfBeers];
-    [self.beerPercentTextField resignFirstResponder];
-    [self buttonPressed:(self)];
-}
 
 @end
