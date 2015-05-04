@@ -1,5 +1,5 @@
 //
-//  MainMenuViewController.h
+//  MainViewController.h
 //  Alcolator
 //
 //  Created by Joe Lucero on 5/4/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainMenuViewController : UIViewController
+@interface MainViewController : UITabBarController
 
 @end

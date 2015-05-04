@@ -1,18 +1,18 @@
 //
-//  MainMenuViewController.m
+//  MainViewController.m
 //  Alcolator
 //
 //  Created by Joe Lucero on 5/4/15.
 //  Copyright (c) 2015 Joe Lucero. All rights reserved.
 //
 
-#import "MainMenuViewController.h"
+#import "MainViewController.h"
 
-@interface MainMenuViewController ()
+@interface MainViewController ()
 
 @end
 
-@implementation MainMenuViewController
+@implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
