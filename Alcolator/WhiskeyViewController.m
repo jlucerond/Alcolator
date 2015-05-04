@@ -14,7 +14,13 @@
 
 @implementation WhiskeyViewController
 
-- (void)buttonPressed:(UIButton *)sender {
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Set Title:
+    self.navigationItem.title = @"Whiskey";
+}
+
+- (IBAction)buttonPressed:(id)sender {
     [self.beerPercentTextField resignFirstResponder];
     //first, calculate how much alcohol is in all those beers...
     int numberOfBeers = self.beerCountSlider.value;
@@ -47,6 +53,7 @@
     
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %.lf %@ of whiskey.", nil), numberOfBeers, beerText, [self.beerPercentTextField.text floatValue], numberOfWhiskeyGlassesForEquivalentAcloholAmount, whiskeyText];
     self.resultLabel.text = resultText;
+    self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"Whiskey (%.lf %@)", nil), numberOfWhiskeyGlassesForEquivalentAcloholAmount, whiskeyText];
 }
 
 

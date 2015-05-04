@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  WineViewController.h
 //  Alcolator
 //
 //  Created by Joe Lucero on 5/3/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface WineViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *beerPercentTextField;
 @property (strong, nonatomic) IBOutlet UISlider *beerCountSlider;

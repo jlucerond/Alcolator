@@ -6,25 +6,22 @@
 //  Copyright (c) 2015 Joe Lucero. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "WineViewController.h"
 
-@interface ViewController ()
+@interface WineViewController ()
 
 @property (strong, nonatomic) IBOutlet UILabel *numberofBeersLabel;
 
 @end
 
-@implementation ViewController
+@implementation WineViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // Set Title:
+    self.navigationItem.title = @"Wine";
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 - (IBAction)textFieldDidChange:(UITextField *)sender {
     NSString *enteredText = sender.text;
     float enteredNumber = [enteredText floatValue];
@@ -76,10 +73,7 @@
     
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %.lf %@ of wine.", nil), numberOfBeers, beerText, [self.beerPercentTextField.text floatValue], numberOfWineGlassesForEquivalentAcloholAmount, wineText];
     self.resultLabel.text = resultText;
-}
-
-- (IBAction)tapGestureDidFire:(UITapGestureRecognizer *)sender {
-    [self.beerPercentTextField resignFirstResponder];
+    self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"Wine (%.lf %@)", nil), numberOfWineGlassesForEquivalentAcloholAmount, wineText];
 }
 
 
