@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,10 +16,50 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q42-6H-m64">
+                                <rect key="frame" x="266" y="141" width="69" height="30"/>
+                                <state key="normal" title="Calculate!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="% Alcohol Content per Beer" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Op8-bY-Ly6">
+                                <rect key="frame" x="66" y="30" width="468" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="xpk-vy-Coa">
+                                <rect key="frame" x="64" y="77" width="472" height="31"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUV-31-UHk">
+                                <rect key="frame" x="31" y="219" width="538" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="CUV-31-UHk" firstAttribute="top" secondItem="q42-6H-m64" secondAttribute="bottom" constant="48" id="3aL-8U-cwI"/>
+                            <constraint firstItem="xpk-vy-Coa" firstAttribute="width" secondItem="Op8-bY-Ly6" secondAttribute="width" id="FHS-nH-kah"/>
+                            <constraint firstItem="CUV-31-UHk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="Nqe-ed-cCR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Op8-bY-Ly6" secondAttribute="trailing" constant="50" id="Xcm-1g-2Ie"/>
+                            <constraint firstItem="Op8-bY-Ly6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="azC-UI-I1Y"/>
+                            <constraint firstItem="q42-6H-m64" firstAttribute="centerX" secondItem="xpk-vy-Coa" secondAttribute="centerX" constant="0.5" id="dPh-xo-Cjh"/>
+                            <constraint firstItem="Op8-bY-Ly6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="gYI-kz-IMp"/>
+                            <constraint firstItem="xpk-vy-Coa" firstAttribute="top" secondItem="Op8-bY-Ly6" secondAttribute="bottom" constant="17" id="j9g-ED-fVc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CUV-31-UHk" secondAttribute="trailing" constant="15" id="kph-dy-f2z"/>
+                            <constraint firstItem="q42-6H-m64" firstAttribute="top" secondItem="xpk-vy-Coa" secondAttribute="bottom" constant="34" id="oyP-K1-d58"/>
+                            <constraint firstItem="xpk-vy-Coa" firstAttribute="centerX" secondItem="Op8-bY-Ly6" secondAttribute="centerX" id="rAS-PY-ddn"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="vud-44-EeN" appends="YES" id="8X4-UO-oma"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vud-44-EeN"/>
             </objects>
         </scene>
     </scenes>
