@@ -42,7 +42,6 @@ float numberOfWineGlassesForEquivalentAcloholAmount = 0;
     self.numberofBeersLabel.text = [NSString stringWithFormat: @"Number of beers: %i", numberOfBeers];
     [self.beerPercentTextField resignFirstResponder];
     [self buttonPressed:(self)];
-    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", (int) numberOfWineGlassesForEquivalentAcloholAmount]];
 }
 
 - (IBAction)buttonPressed:(id)sender {
@@ -79,6 +78,8 @@ float numberOfWineGlassesForEquivalentAcloholAmount = 0;
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %.lf %@ of wine.", nil), numberOfBeers, beerText, [self.beerPercentTextField.text floatValue], numberOfWineGlassesForEquivalentAcloholAmount, wineText];
     self.resultLabel.text = resultText;
     self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"Wine (%.lf %@)", nil), numberOfWineGlassesForEquivalentAcloholAmount, wineText];
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%.lf", (float) numberOfWineGlassesForEquivalentAcloholAmount]];
+
 }
 
 

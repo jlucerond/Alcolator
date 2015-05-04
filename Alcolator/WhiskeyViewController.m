@@ -58,6 +58,7 @@ float numberOfWhiskeyGlassesForEquivalentAcloholAmount = 0;
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %.lf %@ of whiskey.", nil), numberOfBeers, beerText, [self.beerPercentTextField.text floatValue], numberOfWhiskeyGlassesForEquivalentAcloholAmount, whiskeyText];
     self.resultLabel.text = resultText;
     self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"Whiskey (%.lf %@)", nil), numberOfWhiskeyGlassesForEquivalentAcloholAmount, whiskeyText];
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%.lf", (float) numberOfWhiskeyGlassesForEquivalentAcloholAmount]];
 }
 
 - (IBAction)sliderValueDidChange:(UISlider *)sender {
@@ -68,7 +69,6 @@ float numberOfWhiskeyGlassesForEquivalentAcloholAmount = 0;
     self.numberOfBeersLabel.text = [NSString stringWithFormat: @"Number of beers: %i", numberOfBeers];
     [self.beerPercentTextField resignFirstResponder];
     [self buttonPressed:(self)];
-    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", (int) numberOfWhiskeyGlassesForEquivalentAcloholAmount]];
 }
 
 @end
