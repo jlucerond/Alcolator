@@ -14,6 +14,8 @@
 
 @implementation WhiskeyViewController
 
+float numberOfWhiskeyGlassesForEquivalentAcloholAmount = 0;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Set Title:
@@ -32,7 +34,7 @@
     float ouncesInOneWhiskeyGlass = 1;
     float alcoholPercentageOfWhiskey = 0.4;
     float ouncesOfAlocoholPerWihiskeyGlass = ouncesInOneWhiskeyGlass * alcoholPercentageOfWhiskey;
-    float numberOfWhiskeyGlassesForEquivalentAcloholAmount = ouncesOfAlcoholTotal / ouncesOfAlocoholPerWihiskeyGlass;
+    numberOfWhiskeyGlassesForEquivalentAcloholAmount = ouncesOfAlcoholTotal / ouncesOfAlocoholPerWihiskeyGlass;
     //decide whether to use beer/beers and glass/glasses
     NSString * beerText;
     if (numberOfBeers ==1){
@@ -54,6 +56,7 @@
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %.lf %@ of whiskey.", nil), numberOfBeers, beerText, [self.beerPercentTextField.text floatValue], numberOfWhiskeyGlassesForEquivalentAcloholAmount, whiskeyText];
     self.resultLabel.text = resultText;
     self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"Whiskey (%.lf %@)", nil), numberOfWhiskeyGlassesForEquivalentAcloholAmount, whiskeyText];
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%.lf", (float) numberOfWhiskeyGlassesForEquivalentAcloholAmount]];
 }
 
 
