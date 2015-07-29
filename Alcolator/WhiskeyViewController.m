@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Set Title:
-    self.navigationItem.title = @"Whiskey";
+    self.navigationItem.title = @"fdsafdsafdsafdsa";
 }
 
 - (IBAction)buttonPressed:(id)sender {

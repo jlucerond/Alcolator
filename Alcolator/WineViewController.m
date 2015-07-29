@@ -32,12 +32,13 @@
 }
 
 - (IBAction)sliderValueDidChange:(UISlider *)sender {
-    NSLog(@"Slider value changed to %f", sender.value);
+    //NSLog(@"Slider value changed to %f", sender.value);
     int numberOfBeers = sender.value;
-//    This works fine, why won't the textLabel accept numberOfBeers in this statement?
-//    NSLog(@"%i", numberOfBeers);
     self.numberofBeersLabel.text = [NSString stringWithFormat: @"Number of beers: %i", numberOfBeers];
     [self.beerPercentTextField resignFirstResponder];
+    [self buttonPressed:nil];
+    
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", (int) sender.value]];
 }
 
 - (IBAction)buttonPressed:(id)sender {
@@ -51,11 +52,11 @@
     // same for wine...
     float ouncesInOneWineGlass = 5;
     float alcoholPercentageOfWine = 0.13;
-    float ouncesOfAlocoholPerWineGlass = ouncesInOneWineGlass * alcoholPercentageOfWine;
-    float numberOfWineGlassesForEquivalentAcloholAmount = ouncesOfAlcoholTotal / ouncesOfAlocoholPerWineGlass;
+    float ouncesOfAlcoholPerWineGlass = ouncesInOneWineGlass * alcoholPercentageOfWine;
+    float numberOfWineGlassesForEquivalentAcloholAmount = ouncesOfAlcoholTotal / ouncesOfAlcoholPerWineGlass;
     //decide whether to use beer/beers and glass/glasses
     NSString * beerText;
-    if (numberOfBeers ==1){
+    if (numberOfBeers == 1){
         beerText = NSLocalizedString(@"beer", @"singular beer");
     }
     else {
@@ -70,7 +71,7 @@
         wineText = NSLocalizedString(@"glasses", @"plural of glass");
     }
     //generate the result text, and display it on the label
-    
+        
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %.lf %@ of wine.", nil), numberOfBeers, beerText, [self.beerPercentTextField.text floatValue], numberOfWineGlassesForEquivalentAcloholAmount, wineText];
     self.resultLabel.text = resultText;
     self.navigationItem.title = [NSString stringWithFormat:NSLocalizedString(@"Wine (%.lf %@)", nil), numberOfWineGlassesForEquivalentAcloholAmount, wineText];

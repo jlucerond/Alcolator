@@ -15,7 +15,6 @@
 		D8A2B13E1AF719030058B61D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A2B13D1AF719030058B61D /* Images.xcassets */; };
 		D8A2B1411AF719030058B61D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A2B13F1AF719030058B61D /* LaunchScreen.xib */; };
 		D8A2B14D1AF719030058B61D /* AlcolatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A2B14C1AF719030058B61D /* AlcolatorTests.m */; };
-		D8E9D8FA1AF7DE360033F377 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E9D8F91AF7DE360033F377 /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +43,6 @@
 		D8A2B1461AF719030058B61D /* AlcolatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlcolatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A2B14B1AF719030058B61D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8A2B14C1AF719030058B61D /* AlcolatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlcolatorTests.m; sourceTree = "<group>"; };
-		D8E9D8F81AF7DE360033F377 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		D8E9D8F91AF7DE360033F377 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +86,6 @@
 			children = (
 				D8A2B1341AF719030058B61D /* AppDelegate.h */,
 				D8A2B1351AF719030058B61D /* AppDelegate.m */,
-				D8E9D8F81AF7DE360033F377 /* MainViewController.h */,
-				D8E9D8F91AF7DE360033F377 /* MainViewController.m */,
 				D8A2B1371AF719030058B61D /* WineViewController.h */,
 				D8A2B1381AF719030058B61D /* WineViewController.m */,
 				D8516AD31AF7B434002A1D45 /* WhiskeyViewController.h */,
@@ -232,7 +227,6 @@
 				D8A2B1391AF719030058B61D /* WineViewController.m in Sources */,
 				D8516AD51AF7B434002A1D45 /* WhiskeyViewController.m in Sources */,
 				D8A2B1361AF719030058B61D /* AppDelegate.m in Sources */,
-				D8E9D8FA1AF7DE360033F377 /* MainViewController.m in Sources */,
 				D8A2B1331AF719030058B61D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
